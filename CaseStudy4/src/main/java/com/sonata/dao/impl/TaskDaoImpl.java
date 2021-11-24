@@ -85,6 +85,47 @@ public class TaskDaoImpl implements TaskInterface {
 	}
 	
 	@Override
+	public List<Task> getTask(int Task_ID){
+		List<Task> taskList = new ArrayList<>();
+		try {
+			PreparedStatement ps1 = db.getConnection().prepareStatement
+					("select * from Task where Task_ID=?");
+			ps1.setInt(1, Task_ID);
+			ResultSet rs = ps1.executeQuery();
+			while(rs.next()) {
+				Task t = new Task();
+				//int Task_ID = rs.getInt(1);
+				int Owner_ID = rs.getInt(2);
+				int Creator_ID = rs.getInt(3);
+				String Name = rs.getString(4);
+				String Description = rs.getString(5);
+				String Status = rs.getString(6);
+				String Priority = rs.getString(7);
+				String Notes = rs.getString(8);
+				Boolean IsBookmarked = rs.getBoolean(9);
+				String Created_On = rs.getString(10);
+				String Status_Changed_On = rs.getString(11);
+				
+				t.setTask_ID(Task_ID);
+				t.setOwner_ID(Owner_ID);
+				t.setCreator_ID(Creator_ID);
+				t.setName(Name);
+				t.setDescription(Description);
+				t.setStatus(Status);
+				t.setPriority(Priority);
+				t.setNotes(Notes);
+				t.setIsBookmarked(IsBookmarked);
+				t.setCreated_On(Created_On);
+				t.setStatus_Changed_On(Status_Changed_On);
+				taskList.add(t);
+				
+			}	
+		}catch(SQLException se) { se.printStackTrace();}
+		return taskList;
+	
+	}
+	
+	@Override
 	public int setPriority(int Task_ID, String Priority) {
 		try {
 			 
@@ -126,6 +167,64 @@ public class TaskDaoImpl implements TaskInterface {
 		return row;
 		
 	}
+	
+	@Override
+	public List<Task> checkStatus(String Status) {
+		List<Task> taskList = new ArrayList<>();
+		try {
+			PreparedStatement ps1 = db.getConnection().prepareStatement
+					("select * from Task where Status=?");
+			ps1.setString(1, Status);
+			ResultSet rs = ps1.executeQuery();
+			while(rs.next()) {
+				Task t = new Task();
+				int Task_ID = rs.getInt(1);
+				int Owner_ID = rs.getInt(2);
+				int Creator_ID = rs.getInt(3);
+				String Name = rs.getString(4);
+				String Description = rs.getString(5);
+				//String Status = rs.getString(6);
+				String Priority = rs.getString(7);
+				String Notes = rs.getString(8);
+				Boolean IsBookmarked = rs.getBoolean(9);
+				String Created_On = rs.getString(10);
+				String Status_Changed_On = rs.getString(11);
+				
+				t.setTask_ID(Task_ID);
+				t.setOwner_ID(Owner_ID);
+				t.setCreator_ID(Creator_ID);
+				t.setName(Name);
+				t.setDescription(Description);
+				t.setStatus(Status);
+				t.setPriority(Priority);
+				t.setNotes(Notes);
+				t.setIsBookmarked(IsBookmarked);
+				t.setCreated_On(Created_On);
+				t.setStatus_Changed_On(Status_Changed_On);
+				taskList.add(t);
+				
+			}	
+		}catch(SQLException se) { se.printStackTrace();}
+		return taskList;
+		
+	}
+	
+	@Override
+	public int assignTask(int Owner_ID, int Task_ID) {
+		try {
+			PreparedStatement ps = db.getConnection().prepareStatement("update Task set Owner_ID =? where Task_ID = ?");
+			ps.setInt(1, Owner_ID);
+			ps.setInt(2, Task_ID);
+			row = ps.executeUpdate();
+			db.closeConnection();
+		}catch(SQLException sqe) {sqe.printStackTrace();}
+		
+		return row;
+		
+	}
+	
+	
+	
 	
 	public int addTask(Task task) {
 		try {

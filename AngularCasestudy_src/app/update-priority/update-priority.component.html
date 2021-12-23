@@ -1,0 +1,19 @@
+<div style = "background-color:pink; color :black; text-align: center;">
+<form [formGroup]="form3" (ngSubmit)="onSubmit(form3.value)">
+    task_ID :
+    <input type="number" name="task_ID" formControlName="task_ID"/>
+    <br/>
+    <br/>
+
+    priority:
+    <select name="priority" formControlName="priority">
+        <option value="High">High</option>
+        <option value="medium">medium</option>
+        <option value = "low">low</option>
+    </select>
+    <br/>
+    <br/>
+
+    <button type = "button" class= "btn btn-success"(click)="onSubmit(form3.value)">Update</button>    
+</form>
+</div>

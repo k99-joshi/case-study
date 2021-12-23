@@ -1,0 +1,16 @@
+<div style = "background-color:pink; color :black; text-align: center;">
+<h2>Task details</h2>
+ <div *ngFor = "let task of Task">
+    Task_ID : {{task.task_ID}} <br /> 
+    Owner_ID : {{task.owner_ID}} <br />
+    Creator_ID : {{task.creator_ID}} <br />
+    Name : {{task.name}} <br />
+    Description : {{task.description}} <br />
+    Status : {{task.status}} <br />
+    Priority : {{task.priority}} <br />
+    Notes : {{task.notes}} <br />
+    IsBookmarked : {{task.isBookmarked}} <br />
+    Created_On : {{task.created_On}} <br />
+    Status_Changed_On : {{task.status_Changed_On}} <br /> <br />
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div style = "background-color:pink; color :black; text-align: center;">
+<form [formGroup]="form4" (ngSubmit)="onSubmit(form4.value)">
+    task_ID :
+    <input type="number" name="task_ID" formControlName="task_ID"/>
+    <br/>
+    <br/>
+
+    isBookmarked:
+    <select name="isBookmarked" formControlName="isBookmarked">
+        <option value="True">True</option>
+        <option value="False">False</option>
+    </select>
+    <br/>
+    <br/>
+
+    <button type = "button" class= "btn btn-success"(click)="onSubmit(form4.value)">Update</button>    
+</form>
+</div>

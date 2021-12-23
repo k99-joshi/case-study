@@ -1,0 +1,69 @@
+<form [formGroup] = "form" (ngSubmit) = "onSubmit(form.value)">
+    Task_ID<input type ="number" name ="Task_ID" 
+    placeholder="Task_ID"
+    formControlName = "Task_ID"/>
+    <br />
+    Owner_ID<input type ="number" name ="Owner_ID"
+    placeholder="Owner_ID"
+    formControlName = "Owner_ID"/>
+    <br />
+    Creator_ID<input type ="number" name ="Creator_ID"
+    placeholder="Creator_ID"
+    formControlName = "Creator_ID"/>
+    <br />
+    Name<input type = "text" name = "Name"
+    placeholder="Name"
+    formControlName = "Name"/>
+    <br />
+    Description<input type = "text" name = "Description"
+    placeholder="Description"
+    formControlName = "Description"/>
+    <br />
+    Status<select name = "Status" formControlName = "Status">
+        <option value = "Close">Close</option>
+        <option value = "InProgress">InProgress</option>
+        <option value = "Cancelled">Cancelled</option>
+        <option value = "OnHold">OnHold</option>
+    </select>
+    <br />
+    Priority<select name = "Priority" formControlName = "Priority">
+        <option value = "High">High</option>
+        <option value = "Medium">Medium</option>
+        <option value = "Low">Low</option>
+    </select>
+    <br />
+    Notes<input type = "Notes" name = "Notes"
+    placeholder="Notes"
+    formControlName = "Notes"/>
+    <br />
+    IsBookmarked<select name = "IsBookmarked" formControlName = "IsBookmarked">
+        <option value = "True">True</option>
+        <option value = "False">False</option>
+    </select>
+    <br />
+    Created_On<input type ="date" name = "Created_On"
+    placeholder="Created_On"
+    formControlName = "Created_On"/>
+    <br />
+    Status_Changed_On<input type ="date" name = "Status_Changed_On"
+    placeholder="Status_Changed_On"
+    formControlName = "Status_Changed_On"/>
+    <br />
+
+
+
+
+    <input type = "submit" [disabled]="!form.valid" value="submit"/>
+    <br />
+    Task ID is {{Task_ID}} <br/>
+    Owner ID is {{Owner_ID}} <br/>
+    Creator ID is {{Creator_ID}} <br/>
+    Name is {{Name}} <br/>
+    Description is {{Description}} <br/>
+    Status is {{Status}} <br/>
+    Priority is {{Priority}} <br/>
+    Notes is {{Notes}} <br/>
+    IsBookmarked is {{IsBookmarked}} <br/>
+    Created_On {{Created_On}} <br/>
+    Status_Changed_On {{Status_Changed_On}} 
+</form>

@@ -1,0 +1,86 @@
+<p>post-example works!</p>
+<!---
+<div>
+   <span class = "setup"> Return Id</span>
+    <h1 class ="punchline">{{data}}</h1>
+
+    <button type = "button" class= "btn btn-success"
+    (click)="sendData()">Send Post Command</button>
+
+
+</div>
+-->
+<form [formGroup]="form7" (ngSubmit)="onSubmit(form7.value)">
+
+    <div>
+        <span class = "setup"> Return Id</span>
+         <h1 class ="punchline">{{data}}</h1>
+
+    user_Id
+     <input type="number" name="user_Id" placeholder="user_Id" formControlName="user_Id"/>
+     
+     <br/>
+     password
+     <input type="password" name="password" placeholder="password" formControlName="password"/>
+     
+     <br/>
+     username
+     <input type="text" name=" username" placeholder="username" formControlName="username"/>
+     
+     <br/>
+     email
+     <input type="text" name="email" placeholder="email" formControlName="email"/>
+     
+     <br/>
+     first_Name
+     <input type="text" name="first_Name" placeholder="first_Name" formControlName="first_Name"/>
+     
+     <br/>
+     last_Name
+     <input type="text" name="last_Name" placeholder="last_Name" formControlName="last_Name"/>
+
+     <br/>
+     contact_Number
+     <input type="number" name="contact_Number" placeholder="contact_Number" formControlName="contact_Number"/>
+     
+     <br/>
+     role
+     <input type="text" name="role" placeholder="role" formControlName="role"/>
+
+     <br/>
+     isactive
+     <select name="isactive" formControlName="isactive">
+         <option value="True">True</option>
+         <option value="False">False</option>
+         
+     </select>
+
+     <br/>
+     dob
+     <input type="date" name="dob" placeholder="dob" formControlName="dob"/>
+
+     <br/>
+     created_on
+     <input type="date" name="created_on" placeholder="created_on" formControlName="created_on"/>
+     
+     <br/>
+     <!--<input type="submit" [disabled]="!form.valid" value="submit"/>-->
+     
+    <button type = "button" class= "btn btn-success"
+    (click)="onSubmit(form7.value)">Send Post Command</button>
+
+    </div>
+     user_Id is {{user_Id}}
+     password is {{password}}
+     username is {{username}}
+     email is {{email}}
+     first_Name is {{first_Name}}
+     last_Name is {{last_Name}}
+     contact_Number is {{contact_Number}}
+     role is {{role}}
+     isactive is {{isactive}}
+     dob is {{dob}}
+     created_on is {{created_on}}
+ 
+     
+     </form>

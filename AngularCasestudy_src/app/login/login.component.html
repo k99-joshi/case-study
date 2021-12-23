@@ -1,0 +1,35 @@
+<div style = "background-color: pink; color: black; display: flex;align-items: center;justify-content:center;">
+        <h1>Login Page</h1> <br />
+
+</div>
+<div class="container md-5" >
+    <div class="card">
+        <div class="card-head">
+                
+                <!--<h4 class="bg-secondary text-center text-white">Login</h4>-->
+            
+        </div>
+        <br />
+        <br />
+        <div class="card-body" style="text-align: center;background-color: pink; color: black;">
+            <form #formRef="ngForm" (ngSubmit)="login()">
+                <div class="form-group">
+                        <label for="username">UserName:</label>
+                        <input type="text" class="form-control" id="username" name="username" [(ngModel)] ="username" />
+                        
+                       
+                </div>
+                    <div class="form-group">
+                         
+                            <label for="PassWord">PassWord:</label>
+                            <input type="text" class="form-control" id="PassWord" name="PassWord" [(ngModel)] ="PASSWORD" />
+                
+                        
+                    </div>
+                    <br/>
+                    <button class="btn btn-success" type="submit">LOGIN</button>
+            </form>  
+             </div>
+    </div>
+</div>
+

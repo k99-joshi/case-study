@@ -1,0 +1,12 @@
+<div style = "background-color:pink; color :black; text-align: center;">
+<p>Delete Task</p>
+<form [formGroup]="form5" (ngSubmit)="onSubmit(form5.value)">
+    task_ID :
+    <input type="number" name="task_ID" formControlName="task_ID"/>
+    <br/>
+    <br/>
+
+    <button type = "button" class= "btn btn-success"(click)="onSubmit(form5.value)">Delete</button>    
+</form>
+</div>
+

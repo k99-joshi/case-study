@@ -1,0 +1,98 @@
+<div style = "background-color:pink; color :black; text-align: center;">
+<!---
+<div>
+   <span class = "setup"> Return Id</span>
+    <h1 class ="punchline">{{data}}</h1>
+
+    <button type = "button" class= "btn btn-success"
+    (click)="sendData()">Send Post Command</button>
+
+
+</div>
+-->
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+    <div>
+        <span class = "setup"> Return Id</span>
+         <h1 class ="punchline">{{data}}</h1>
+
+    task_ID
+     <input type="text" name="task_ID" placeholder="task_ID" formControlName="task_ID"/>
+     
+     <br/>
+     owner_ID
+     <input type="text" name="owner_ID" placeholder="owner_ID" formControlName="owner_ID"/>
+     
+     <br/>
+     creator_ID
+     <input type="text" name="creator_ID" placeholder="creator_ID" formControlName="creator_ID"/>
+     
+     <br/>
+     name
+     <input type="text" name="name" placeholder="name" formControlName="name"/>
+     
+     <br/>
+     description
+     <input type="text" name="description" placeholder="description" formControlName="description"/>
+     
+     <br/>
+     status<select name="status" formControlName="status">
+         <option value="InProgress">InProgress</option>
+         <option value="Cancelled">Cancelled</option>
+         <option value="Closed">Closed</option>
+         <option value = "OnHold">OnHold</option>
+     </select>
+     
+     
+     <br/>
+     priority<select name="priority" formControlName="priority">
+         <option value="High">High</option>
+         <option value="Medium">Medium</option>
+         <option value="Low">Low</option>
+     </select>
+     
+     
+     <br/>
+     notes
+     <input type="text" name="notes" placeholder="notes" formControlName="notes"/>
+     
+     <br/>
+ 
+     isBookmarked
+     <select name="isBookmarked" formControlName="isBookmarked">
+         <option value="True">True</option>
+         <option value="False">False</option>
+         
+     </select>
+     <br/>
+     
+     created_On
+     <input type="date" name="created_On" placeholder="created_On" formControlName="created_On"/>
+     <br/>
+ 
+     status_Changed_On<input type="date" name="status_Changed_On" placeholder="status_Changed_On" formControlName="status_Changed_On"/>
+     
+     
+     <br/>
+     <!--<input type="submit" [disabled]="!form.valid" value="submit"/>-->
+     
+    <button type = "button" class= "btn btn-success"
+    (click)="onSubmit(form.value)">Send Post Command</button>
+
+    </div>
+     task_ID is {{task_ID}}
+     owner_ID is {{owner_ID}}
+    creator_ID is {{creator_ID}}
+     name is {{name}}
+     description is {{description}}
+     status is {{status}}
+     priority is {{priority}}
+     notes is {{notes}}
+     isBookmarked is {{isBookmarked}}
+     created_On is {{created_On}}
+     status_Changed_On is {{status_Changed_On}}
+ 
+     
+     </form>
+</div>
+     

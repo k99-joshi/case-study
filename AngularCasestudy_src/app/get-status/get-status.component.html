@@ -1,0 +1,20 @@
+<h2>Get Status </h2>
+<div>
+    <form [formGroup]="form2" (ngSubmit)="onSubmit(form2.value)">
+        <!--status :
+        <select name = "status" formControlName = "status">
+            <option value = "Close">Close</option>
+            <option value = "InProgress">InProgress</option>
+            <option value = "Cancelled">Cancelled</option>
+            <option value = "OnHold">OnHold</option>
+        </select>
+        <br/>-->
+        status :
+        <input type="text" name="status" formControlName="status"/>
+        <br/>
+        <br/>
+
+        <button type = "button" class= "btn btn-success"(click)="onSubmit(form2.value)">Get Status</button>
+    </form>
+</div>
+
